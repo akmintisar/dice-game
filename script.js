@@ -8,6 +8,8 @@ const diceRollingButton = document.querySelector('.player--00');
 const holdingGame = document.querySelector('.btn--hold');
 const currentScoreOfPlayer1 = document.getElementById('current--0');
 const currentScoreOfPlayer2 = document.getElementById('current--1');
+const player1Display = document.querySelector('.player--0');
+const player2Display = document.querySelector('.player--1');
 
 const finalScores = [0, 0];
 let currentScore = 0;
@@ -18,11 +20,14 @@ diceRoll.addEventListener('click', function () {
   document.querySelector('.dice').src = `dice-${randomDiceNumberGenerator}.png`;
 
   if (randomDiceNumberGenerator == 1) {
-    activePlayer = 1;
-    currentScore = 0;
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+    activePlayer = activePlayer === 0 ? 1 : 0;
+
     currentScore += randomDiceNumberGenerator;
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
+    player1Display.classList.toggle('player--active');
+    player2Display.classList.toggle('player--active');
   } else {
     currentScore += randomDiceNumberGenerator;
     document.getElementById(`current--${activePlayer}`).textContent =

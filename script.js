@@ -36,3 +36,8 @@ diceRoll.addEventListener('click', function () {
 
   console.log(randomDiceNumberGenerator);
 });
+
+holdingGame.addEventListener('click', function () {
+  console.log(`holding clicked!`);
+  document.getElementById(`score--${activePlayer}`).textContent = currentScore;
+});

@@ -22,14 +22,21 @@ diceRoll.addEventListener('click', function () {
   if (randomDiceNumberGenerator == 1) {
     document.getElementById(`current--${activePlayer}`).textContent = 0;
     activePlayer = activePlayer === 0 ? 1 : 0;
+    currentScore = 0;
 
-    currentScore += randomDiceNumberGenerator;
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
+    currentScore += randomDiceNumberGenerator;
+    if (currentScore > 20) {
+      console.log('Winner!');
+    }
     player1Display.classList.toggle('player--active');
     player2Display.classList.toggle('player--active');
   } else {
     currentScore += randomDiceNumberGenerator;
+    if (currentScore > 20) {
+      console.log('Winner!');
+    }
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
   }
@@ -40,4 +47,15 @@ diceRoll.addEventListener('click', function () {
 holdingGame.addEventListener('click', function () {
   console.log(`holding clicked!`);
   document.getElementById(`score--${activePlayer}`).textContent = currentScore;
+
+  currentScore = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+});
+
+newGame.addEventListener('click', function () {
+  document.getElementById('score--0').textContent = 0;
+  document.getElementById('score--1').textContent = 0;
+  document.getElementById('current--0').textContent = 0;
+  document.getElementById('current--1').textContent = 0;
+  console.log(`need new game`);
 });

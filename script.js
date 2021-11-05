@@ -53,10 +53,12 @@ holdingGame.addEventListener('click', function () {
 });
 
 newGame.addEventListener('click', function () {
-  document.getElementById('score--0').textContent = 0;
-  document.getElementById('score--1').textContent = 0;
-  document.getElementById('current--0').textContent = 0;
-  document.getElementById('current--1').textContent = 0;
-  currentScore = 0;
-  console.log(`need new game`);
+  // document.getElementById('score--0').textContent = 0;
+  // document.getElementById('score--1').textContent = 0;
+  // document.getElementById('current--0').textContent = 0;
+  // document.getElementById('current--1').textContent = 0;
+  // currentScore = 0;
+  // activePlayer = 0;
+  // console.log(`need new game`);
+  location.reload();
 });

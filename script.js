@@ -28,14 +28,14 @@ diceRoll.addEventListener('click', function () {
     currentScore = 0;
     currentScore += randomDiceNumberGenerator - 1;
     if (currentScore > 20) {
-      console.log('Winner!');
+      console.log(`player 2 wins!`);
     }
     player1Display.classList.toggle('player--active');
     player2Display.classList.toggle('player--active');
   } else {
     currentScore += randomDiceNumberGenerator;
     if (currentScore > 20) {
-      console.log('Winner!');
+      console.log(`player 1 wins!`);
     }
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;

@@ -29,12 +29,6 @@ diceRoll.addEventListener('click', function () {
     currentScore += randomDiceNumberGenerator - 1;
     if (currentScore > 20) {
       console.log(`player 2 wins!`);
-      document
-        .querySelector(`player--${activePlayer}`)
-        .classList.add('player--winner');
-      document
-        .querySelector(`player--${activePlayer}`)
-        .classList.remove('player--active');
     }
     player1Display.classList.toggle('player--active');
     player2Display.classList.toggle('player--active');

@@ -36,12 +36,7 @@ diceRoll.addEventListener('click', function () {
     currentScore += randomDiceNumberGenerator;
     if (currentScore > 20) {
       console.log(`player 1 wins!`);
-      document
-        .querySelector(`player--${activePlayer}`)
-        .classList.add('player--winner');
-      document
-        .querySelector(`player--${activePlayer}`)
-        .classList.remove('player--active');
+      console.log(activePlayer);
     }
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
